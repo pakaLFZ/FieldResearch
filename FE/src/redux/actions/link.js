@@ -11,7 +11,7 @@ export const CONVERSATION_SAVE = 'link/CONVERSATION_SAVE'
 
 export function conversation_request(messages) {
   return function (dispatch) {
-    const openaiApiKey = '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'; // Replace with your actual OpenAI API key
+    const openaiApiKey = 'OPENAIKEY'; // Replace with your actual OpenAI API key
 
     const requestData = {
       model: 'gpt-3.5-turbo',
