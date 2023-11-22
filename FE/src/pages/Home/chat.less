@@ -1,0 +1,59 @@
+
+.chatContent {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 560px;
+   
+    
+}
+.chatField{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-color: rgb(169, 169, 169);
+    border-width: 2px;
+    border-radius: 15px;
+}
+
+.messageLine {
+    position: relative;
+    left: 10px;
+    max-width: calc(100% - 10px);
+    margin-bottom: 15px;
+    font-family: Roboto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .msgTitle_user {
+        position: relative;
+        font-size: 16px;
+        float: left;
+        line-height: 3px;
+        color: rgb(112, 112, 112);
+    }
+    .msgTitle_assistant {
+        position: relative;
+        font-size: 16px;
+        float: left;
+        line-height: 3px;
+        color: rgb(6, 105, 255)
+    }
+    .msg {
+        position: relative;
+        float: left;
+        font-size: 20px;
+        max-width: 500px;
+        top: -10px;
+    }
+}
+
+
