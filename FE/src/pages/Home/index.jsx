@@ -1,5 +1,5 @@
 import React, {
-    useState
+    useState, useRef 
 } from 'react'
 
 import {
@@ -12,9 +12,14 @@ import {
     useHistory
 } from 'react-router-dom'
 import Button from '@mui/material/Button'
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Tooltip from '@mui/material/Tooltip';
 
 import Block2 from './block2'
 import styles from './index.less'
+import Alert from 'component/SnackBar'
+import { snack_open } from 'actions/snack'
+
 
 
 export default withRouter(Page)
@@ -22,10 +27,31 @@ function Page(props) {
     const history = useHistory()
     const dispatch = useDispatch()
 
+    const scrollToBottom = () => {
+        window.scrollTo({
+          left: 0,
+          top: document.body.scrollHeight,
+          behavior: 'smooth', // Optional: defines the transition animation
+        });
+    }    
     return (
         <div classname={styles.maincontainer}>
+            <ButtonGroup 
+                variant="text" 
+                className={styles.signup}
+            >
+                 <Tooltip title="Internal Maintenance">
+                    <Button>Login</Button>
+
+                 </Tooltip>
+                 <Tooltip title="Internal Maintenance">
+                    <Button>Signup</Button>
+                 </Tooltip>
+
+            </ButtonGroup>
             {/* Block one */}
             <div className={styles.block1}>
+                    
                 <div className={styles.block1content}>
                     <p className={styles.title1}>FieldResearcher</p>
                     <p className={styles.title2}>Your partner in decision making in front of challenges from lacking of information</p>
@@ -34,7 +60,8 @@ function Page(props) {
                         <Button
                             size="large"
                             variant="outlined"
-                            href={'/#Block2'}
+                            onClick={()=>scrollToBottom()}
+
                         >
                             Get Started
                         </Button>

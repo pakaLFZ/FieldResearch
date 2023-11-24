@@ -11,7 +11,7 @@ export const CONVERSATION_SAVE = 'link/CONVERSATION_SAVE'
 
 export function conversation_request(messages) {
   return function (dispatch) {
-    const openaiApiKey = 'OPENAIKEY'; // Replace with your actual OpenAI API key
+    const openaiApiKey = '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'; // Replace with your actual OpenAI API key
 
     const requestData = {
       model: 'gpt-3.5-turbo',
@@ -23,7 +23,9 @@ export function conversation_request(messages) {
       'Authorization': `Bearer ${openaiApiKey}`,
     };
 
-    dispatch(searchClose)
+    dispatch(searchClose())
+    dispatch(conversation_save(messages))
+
     return axios
       .post('https://api.openai.com/v1/chat/completions', requestData, { headers })
       .then(response => {
@@ -33,13 +35,12 @@ export function conversation_request(messages) {
           ...messages,
           data_
         ]
-        console.log(data);
         dispatch(conversation_save(data))
-        dispatch(searchOpen)
+        dispatch(searchOpen())
       })
       .catch(error => {
         // Handle errors
-        dispatch(searchOpen)
+        dispatch(searchOpen())
         console.error('Error calling OpenAI API:', error);
       });
   };

@@ -37,8 +37,9 @@ function Block2(props) {
             <br/>
             <br/>
             <br/>
-            <p className={styles.copyrights}>FieldResearch</p>
             <br/>
+            <br/>
+            <p className={styles.copyrights}>FieldResearch</p>
             <br/>
             <br/>
 
