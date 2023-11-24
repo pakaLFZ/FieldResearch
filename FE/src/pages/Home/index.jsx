@@ -53,7 +53,7 @@ function Page(props) {
             <div className={styles.block1}>
                     
                 <div className={styles.block1content}>
-                    <p className={styles.title1}>FieldResearcher</p>
+                    <p className={styles.title1}>FieldsResearch</p>
                     <p className={styles.title2}>Your partner in decision making in front of challenges from lacking of information</p>
 
                     <div className={styles.buttonGroup}>

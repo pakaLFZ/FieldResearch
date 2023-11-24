@@ -215,7 +215,7 @@ function AssistantBubble(props) {
         return (
             <div className={styles.messageLine}>
                 <p className={styles.msgTitle_assistant} >
-                    FieldResearch
+                    FieldsResearch
                 </p>
                 <p className={styles.msg}>
                     <Multiline />
